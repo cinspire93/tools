@@ -47,7 +47,7 @@ def plot_profit_curve(model, plotlabel, cb, X_train, X_test, y_train, y_test):
     y_predict_probas = model.predict_proba(X_test)[:,1]
 
     expected_profits = profit_curve(cb, y_test, y_predict_probas)
-    percentages = np.arange(0, 100, 100. / len(profits))
+    percentages = np.arange(0, 100, 100. / len(expected_profits))
 
     plt.plot(percentages, expected_profits, label=plotlabel)
     plt.title("Profit Curve")
